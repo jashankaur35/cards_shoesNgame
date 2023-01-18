@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>
+hover product card design 
+</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height: 100vh;
+	background: linear-gradient(-30deg, #03a9f4 0%, #3a78b7 50%, #262626 50%, #607d8b 100%);
+	filter: hue-rotate(120deg);
+	animation: animate 10s linear infinite;
+}
+@keyframes animate{
+	0%{
+		filter: hue-rotate(0deg);
+	}
+	100%{
+		filter: hue-rotate(360deg);
+	}
+}
+.container{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	align-items:center;	
+	flex-wrap:wrap;
+	width: 1200px;
+	transform-style: preserve-3d;
+}
+.container .box{
+	position:relative;
+	width: 300px;
+	height: 400px;
+	margin: 40px;
+	background:linear-gradient(200deg, #ff6f6f 10%, #b745ed 90%);
+	border-radius: 20px;
+	transform-style: preserve-3d;
+}
+.container .box::before{
+	content: 'JASHAN';
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 4em;
+	font-weight: 900;
+	color: #fff;
+	font-style: italic;
+	opacity: 0;	
+	transition: 0.5s;
+}
+.container .box::after{
+	content: 'MATTU';
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 5em;
+	font-weight: 900;
+	color: #fff;
+	font-style: italic;
+	opacity: 0;	
+	transition: 0.5s;
+}
+.container .box:hover::before,
+.container .box:hover::after{
+	opacity: 0.4;
+}
+.container .box .name{
+	position: absolute;
+	top: 0;
+	left:0;
+	text-align:center;
+	color:#fff;
+	width: 100%;
+	transform: translate3d(0,0,75px)
+	transform-style: preserve-3d;
+	transition: 0.5s;
+	opacity: 0;
+	z-index: 10;
+}
+.container .box:hover .name{
+	top: 40px;
+	opacity: 1;
+}
+.container .box .buy{
+	position: absolute;
+	bottom:0;
+	left: 50%;
+	transform: translate3d(-50%, 0, 75px);
+	transform-style: preserve-3d;
+	color: #fff;
+	background: #333;
+	padding: 10px 25px;
+	border-radius: 30px;
+	text-decoration: none;
+	transition: 0.5s;
+	opacity: 0;
+	z-index: 10;
+}
+.container .box:hover .buy{
+	bottom:30px;
+	opacity: 1;
+}
+.container .box .circle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	transition: 0.5s;
+	background: #fff;
+	transform-style: preserve-3d;
+	z-index: 10;
+	opacity: 1;
+	transform: translate3d(-50%, -50%, 50px);
+}
+.container .box .product{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: 300px;
+	transition: 0.5s;
+	z-index: 11;
+	transition: 0.5s;
+	transform-style: preserve-3d;
+	transform: translate3d(-50%, -50%, 50px) rotate(-15deg) ;
+}
+.container .box:hover .product{
+	transform: translate3d(-50%, -50%, 100px) rotate(-15px) ;	
+}
+.container .box:nth-child(1) .buy,
+.container .box:nth-child(1) .circle{
+	background:linear-gradient(15deg, #56d8e4 10%, #9f01ea 90%);
+}
+.container .box:nth-child(2) .buy,
+.container .box:nth-child(2) .circle{
+	background:linear-gradient(15deg, #56d8e4 10%, #9f01ea 90%);
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="box">
+          <h2 class="name">JASHAN_MATTU</h2>
+          <a href="#" class="buy">Buy Now</a>
+
+   <div class="circle"></div>
+
+   <img src="shoes1.png" class="product" style="width:100%;">
+
+   </div>
+
+
+ <div class="box">
+          <h2 class="name">PRO_THRILLER</h2>
+          <a href="#" class="buy">Buy Now</a>
+
+   <div class="circle"></div>
+
+   <img src="progame.png" class="product" style="width:70%;">
+
+   </div>
+
+
+</div>
+<script src="vanilla-tilt.min.js"></script>
+<script>
+VanillaTilt.init(document.querySelectorAll(".box"), {
+		max: 45,
+		speed: 400
+	});
+</script>
+</body>
+</html>
+
+
+
